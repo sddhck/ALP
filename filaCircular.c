@@ -20,7 +20,7 @@ int estaCheia(Fila *f){
     return f->total == CAPACIDADE;
 }
 
- estaVazia(Fila *f){
+int estaVazia(Fila *f){
     return f->total == 0;
 }
 
@@ -38,7 +38,7 @@ void enfileirar(Fila *f, int valor){
 int desenfileirar(Fila *f){
     if(estaVazia(f)){
         printf("A FIA ESTA VAZIA");
-        return;
+        return 1;
     }
     int valor = f->fila[f->inicio];
     f->inicio = (f->inicio + 1) % CAPACIDADE;
@@ -52,4 +52,8 @@ void imprimir(Fila *f){
         printf("[%d] ", f->fila[idx]);
     }
     printf("<- Fim\n");
+}
+
+int main(void){
+    
 }
